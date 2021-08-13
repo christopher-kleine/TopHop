@@ -1,2 +1,3 @@
-# HopTop
-Repo for the HopTop implementations
+# TopHop
+
+Repo for the TopHop implementations
