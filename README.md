@@ -40,3 +40,9 @@ Originally developed for the TIC-80, `Top Hop` got ports for several other platf
 
 [LowRes NX  
 ![LowRes NX](images/lowresnx.png)](LowResNX/)
+
+## Play on itch.io
+
+You can play the TIC-80 version online on https://itch.io.
+
+[PLAY NOW!](https://mega-sparkmaster.itch.io/top-hop)
