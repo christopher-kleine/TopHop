@@ -15,7 +15,7 @@ This is the original version of the game.
 
 ## About TIC-80
 
-Quote from the official website https://tic80.com/
+Quote from the official website: https://tic80.com/
 
 ```
 TIC-80 is a fantasy computer for making, playing and sharing tiny games.
