@@ -1,7 +1,7 @@
 # Top Hop - A Tiny Challenge (Pixel Vision 8 Version)
 
 
-- 1:1 Aspect Ratio instead of 16:9
+- 256x240 resolution instead of the original 240x136
 - 8 Level based on the TIC-80 version
 
 ## Screenshot comparsion
