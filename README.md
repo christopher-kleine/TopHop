@@ -43,6 +43,6 @@ Originally developed for the TIC-80, `Top Hop` got ports for several other platf
 
 ## Play on itch.io
 
-You can play the TIC-80 version online on https://mega-sparkmaster.itch.io/top-hop.
+You can play the TIC-80 version online on itch.io:
 
 [PLAY NOW!](https://mega-sparkmaster.itch.io/top-hop)
