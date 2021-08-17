@@ -3,7 +3,7 @@
 Top Hop is a short puzzle-platformer game with only a few levels (which can be different in each version).
 
 The protagonist of this game, Max, can't jump. So it's your task to attach technologically advanced springs to the ground.
-Use your pointer, so he can reach higher platforms. But be aware! Max also can't swim, so avoid water.
+Use your pointer, so he can reach higher platforms. But beware! Max also can't swim, so avoid water.
 
 However, there's a little problem: You only have 3 springs! Can you guide Max to the exit without him dying?
 
