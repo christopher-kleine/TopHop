@@ -15,7 +15,7 @@
 
 ## About PQ93
 
-Quote from the official website: https://pennie.itch.io/pq93
+Quote from the official website https://pennie.itch.io/pq93
 
 ```
 PQ93 is a fantasy console written in modern C++ (previously in C). it uses Gameboy resolution (160x144), the arne16 color palette, and MoonScript. It runs on Windows, macOS, and Ubuntu.
