@@ -17,7 +17,7 @@ Max walks automatically, so the only thing you control is his jump, which is act
 
 Press ![A-Button](images/button-a.png) to start/pause the game.
 
-Use your mouse to place/remove springs.
+Use your cursor to place/remove springs.
 
 ## Available Platforms
 
