@@ -46,7 +46,8 @@ function init()
 		y=start_y,
 		vx=0,
 		vy=0,
-		s=0.35
+		s=0.35,
+		sprite=19
  }
 	f=0
 	mc=0
@@ -86,7 +87,7 @@ function TIC()
 	
 	elseif mode=="pause" then
 	 map(map_off,0)
-		spr(19+f,p.x-map_off*8,p.y,0)
+		spr(p.sprite+f,p.x-map_off*8,p.y,0)
 		print("AREA "..level+1,10,10,12,false,1,true)
 		print("SPRINGS: "..sp,24*8+2,10,13,false,1,true)
 		print("PAUSE",13*8+2,8*8,12)
@@ -184,11 +185,20 @@ function TIC()
 	
  	map(map_off,0)
  	rectb(math.floor(mx/8)*8,math.floor(my/8)*8,8,8,12)
- 	spr(19+f,p.x-map_off*8,p.y,0)
+ 	spr(p.sprite+f,p.x-map_off*8,p.y,0)
 		print("AREA "..level+1,10,10,12,false,1,true)
 		print("SPRINGS: "..sp,24*8+2,10,13,false,1,true)
 
- 	f=(f+p.s/5)%4
+  if p.vy==0 then
+   p.sprite=19
+ 	 f=(f+p.s/5)%4
+  elseif p.vy>0 then
+   p.sprite=41
+   f=0
+  elseif p.vy<0 then
+   p.sprite=42
+   f=0
+  end
 		
 	end
 	
@@ -242,6 +252,8 @@ end
 -- 038:11111fff22212fef33323ede44434dcd33323ede2ffedeef1fedcdef0ffedeff
 -- 039:11111fff22212fef33323ede44434dcd33323ede22212fef11111fff00000000
 -- 040:0ffedeffffedcdeffefedeffede34321dcd23211ede34321fef34321fff34321
+-- 041:0002220000223100002333000005600000566720003998000000910000002000
+-- 042:0002220000223100002333200055670003066000009900000099000002200000
 -- </TILES>
 
 -- <MAP>
