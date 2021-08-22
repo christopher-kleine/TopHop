@@ -42,7 +42,8 @@ function Init()
   y=start_y,
   vx=0,
   vy=0,
-  s=0.35
+  s=0.35,
+  sprite=19
  }
   mc=0
   sp=3
@@ -167,7 +168,16 @@ function Update(deltaTime)
   if sp>=3 then sp=3 end
   if mc>=1 then mc=1 end
   
-  f=(f+p.s/5)%4
+  if p.vy==0 then
+   p.sprite=19
+   f=(f+p.s/5)%4
+  elseif p.vy>0 then
+   p.sprite=43
+   f=0
+  elseif p.vy<0 then
+   p.sprite=44
+   f=0     
+  end
   
   wind=wind+0.1
   if wind>=30.5 then
@@ -201,7 +211,7 @@ function Draw()
     
    elseif mode=="pause" then
     
-    DrawSprite(19+f,p.x,p.y)
+    DrawSprite(p.sprite+f,p.x,p.y)
     DrawText("AREA "..level,13*8,16,DrawMode.Sprite,"large",15)
     DrawText("SPRINGS: "..sp,11*8,27*8,DrawMode.Sprite,"large",11)
     DrawText("PAUSE",13*8+5,15*8,DrawMode.Sprite,"large",15)            
@@ -209,7 +219,7 @@ function Draw()
    elseif mode=="game" then
 
     DrawSprite(41,math.floor(m.x/8)*8,math.floor(m.y/8)*8)
-    DrawSprite(19+f,p.x,p.y)
+    DrawSprite(p.sprite+f,p.x,p.y)
     DrawText("AREA "..level,13*8,16,DrawMode.Sprite,"large",15)
     DrawText("SPRINGS: "..sp,11*8,27*8,DrawMode.Sprite,"large",11)
    
