@@ -3,7 +3,7 @@ package main
 import "github.com/hajimehoshi/ebiten/v2"
 
 type Pause struct {
-	Game *Game
+	game *Game
 }
 
 func (p *Pause) Update() error {
@@ -11,5 +11,11 @@ func (p *Pause) Update() error {
 }
 
 func (p *Pause) Draw(screen *ebiten.Image) {
-	p.Game.Player.Draw(screen)
+	p.game.Render(WorldScene, screen)
+}
+
+func NewPause(game *Game) *Pause {
+	return &Pause{
+		game: game,
+	}
 }

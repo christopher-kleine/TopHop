@@ -1,21 +1,22 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/hajimehoshi/ebiten/v2"
-	"github.com/hajimehoshi/ebiten/v2/ebitenutil"
+	//"github.com/hajimehoshi/ebiten/v2/ebitenutil"
+)
+
+type SceneID int
+
+const (
+	SplashScene SceneID = iota
+	PauseScene
+	WorldScene
+	GoalScene
 )
 
 type Game struct {
-	Player *Player
-	World  *World
-
-	scenes map[string]Scene
-	Scene  string
-}
-
-func (g *Game) SetScene(name string) {
+	scenes map[SceneID]Scene
+	Scene  SceneID
 }
 
 func (g *Game) Update() error {
@@ -25,24 +26,26 @@ func (g *Game) Update() error {
 func (g *Game) Draw(screen *ebiten.Image) {
 	g.scenes[g.Scene].Draw(screen)
 
-	ebitenutil.DebugPrint(screen, fmt.Sprintf("FPS: %.0f\nTPS: %.0f", ebiten.CurrentFPS(), ebiten.CurrentTPS()))
+	//ebitenutil.DebugPrint(screen, fmt.Sprintf("FPS: %.0f\nTPS: %.0f", ebiten.CurrentFPS(), ebiten.CurrentTPS()))
 }
 
 func (g *Game) Layout(outsideW, outsideH int) (int, int) {
 	return 240, 160
 }
 
+func (g *Game) Render(scene SceneID, screen *ebiten.Image) {
+	g.scenes[scene].Draw(screen)
+}
+
 func NewGame() *Game {
 	game := &Game{
-		Player: NewPlayer(),
-		World:  NewWorld(),
-		scenes: make(map[string]Scene),
-		Scene:  "splash",
+		scenes: make(map[SceneID]Scene),
+		Scene:  SplashScene,
 	}
 
-	game.scenes["pause"] = &Pause{Game: game}
-	game.scenes["splash"] = &Splash{Game: game}
-	game.scenes["levels"] = &Levels{Game: game}
+	game.scenes[PauseScene] = NewPause(game)
+	game.scenes[SplashScene] = NewSplash(game)
+	game.scenes[WorldScene] = NewWorld(game)
 
 	return game
 }

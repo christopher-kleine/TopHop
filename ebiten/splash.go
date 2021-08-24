@@ -6,17 +6,22 @@ import (
 )
 
 type Splash struct {
-	Game *Game
+	game *Game
 }
 
 func (s *Splash) Update() error {
 	if inpututil.IsMouseButtonJustPressed(ebiten.MouseButtonLeft) {
-		s.Game.Scene = "levels"
+		s.game.Scene = WorldScene
 	}
 
 	return nil
 }
 
 func (s *Splash) Draw(screen *ebiten.Image) {
-	s.Game.World.Draw(screen)
+}
+
+func NewSplash(game *Game) *Splash {
+	return &Splash{
+		game: game,
+	}
 }
