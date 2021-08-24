@@ -48,6 +48,8 @@ func (w *World) Update() error {
 			w.player.PosX = w.level.PlayerX
 			w.player.PosY = w.level.PlayerY
 			w.player.Reset()
+
+			w.game.SetScene(PauseScene, true)
 		}
 	}
 
@@ -55,6 +57,8 @@ func (w *World) Update() error {
 		w.player.PosX = w.level.PlayerX
 		w.player.PosY = w.level.PlayerY
 		w.player.Reset()
+
+		w.game.SetScene(PauseScene, true)
 	}
 
 	return nil
