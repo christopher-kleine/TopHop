@@ -2,7 +2,6 @@ package main
 
 import (
 	"embed"
-	//_ "embed"
 	"log"
 
 	"github.com/hajimehoshi/ebiten/v2"
@@ -18,7 +17,6 @@ func main() {
 	ebiten.SetWindowTitle("Top Hop - A tiny challenge")
 	// Call ebiten.RunGame to start your game loop.
 	if err := ebiten.RunGame(game); err != nil {
-		log.Println("-- 1 --")
 		log.Fatal(err)
 	}
 }

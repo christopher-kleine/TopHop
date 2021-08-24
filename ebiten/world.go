@@ -59,10 +59,6 @@ func (w *World) Draw(screen *ebiten.Image) {
 }
 
 func NewWorld(g *Game) *World {
-	// isSolidDummy := func(x, y int) bool {
-	// 	return (x < 9) || (x >= 9 && y >= 18)
-	// }
-
 	l := NewLevel("level1.tmx")
 
 	world := &World{

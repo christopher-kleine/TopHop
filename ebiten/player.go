@@ -105,13 +105,11 @@ func NewPlayer(IsSolid func(int, int) bool) *Player {
 	var err error
 	playerPng, err := assets.ReadFile("assets/images/player.png")
 	if err != nil {
-		log.Println("-- 2 --")
 		log.Fatal(err)
 	}
 
 	playerDecoded, _, err := image.Decode(bytes.NewReader(playerPng))
 	if err != nil {
-		log.Println("-- 3 --")
 		log.Fatal(err)
 	}
 
