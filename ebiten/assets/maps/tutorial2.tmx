@@ -2,24 +2,15 @@
 <map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="8" tileheight="8" infinite="0" nextlayerid="3" nextobjectid="1">
  <tileset firstgid="1" name="world" tilewidth="8" tileheight="8" tilecount="64" columns="8">
   <image source="../images/world.png" width="64" height="64"/>
-  <tile id="14">
-   <animation>
-    <frame tileid="14" duration="1000"/>
-    <frame tileid="22" duration="200"/>
-    <frame tileid="30" duration="200"/>
-    <frame tileid="38" duration="200"/>
-    <frame tileid="46" duration="200"/>
-   </animation>
-  </tile>
  </tileset>
  <layer id="1" name="Kachelebene 1" width="30" height="20">
   <data encoding="base64" compression="zlib">
-   eJwTYmBgkKIzFgJiYSBWpDMWHLV31N5Re0ftHbWXZvbqATE/EBvQ2V4zIDYHYgs622sHxPZA7DAC7OUEYi4kzE0He9HtJMdukL1COMyhJQbZCQDQj0el
+   eJwTYmBgkKIzFgJiYQb6A8FRe0ftHbV31N5Re0ftHbWXZMBDob2SZNorQqG9zAyQNgcXiZgcPegYALBJBts=
   </data>
  </layer>
  <layer id="2" name="Kachelebene 2" width="30" height="20">
   <data encoding="base64" compression="zlib">
-   eJztwTEBAAAAwqD1T20JT6AAAHgaCWAAAQ==
+   eJxjZ2BgYB8gTG8wau+ovaP2jto7au+ovaP2kg7YqGQvCxn6KAGsUDPYSMTk6EHXDwBl5AKV
   </data>
  </layer>
 </map>

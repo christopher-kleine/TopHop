@@ -15,16 +15,23 @@ const (
 )
 
 type Game struct {
-	scenes map[SceneID]Scene
-	Scene  SceneID
+	scenes  map[SceneID]Scene
+	sceneID SceneID
+}
+
+func (g *Game) SetScene(sceneID SceneID, reset bool) {
+	if reset {
+		g.scenes[sceneID].Reset()
+	}
+	g.sceneID = sceneID
 }
 
 func (g *Game) Update() error {
-	return g.scenes[g.Scene].Update()
+	return g.scenes[g.sceneID].Update()
 }
 
 func (g *Game) Draw(screen *ebiten.Image) {
-	g.scenes[g.Scene].Draw(screen)
+	g.scenes[g.sceneID].Draw(screen)
 
 	//ebitenutil.DebugPrint(screen, fmt.Sprintf("FPS: %.0f\nTPS: %.0f", ebiten.CurrentFPS(), ebiten.CurrentTPS()))
 }
@@ -39,13 +46,16 @@ func (g *Game) Render(scene SceneID, screen *ebiten.Image) {
 
 func NewGame() *Game {
 	game := &Game{
-		scenes: make(map[SceneID]Scene),
-		Scene:  SplashScene,
+		scenes:  make(map[SceneID]Scene),
+		sceneID: SplashScene,
 	}
 
 	game.scenes[PauseScene] = NewPause(game)
 	game.scenes[SplashScene] = NewSplash(game)
 	game.scenes[WorldScene] = NewWorld(game)
+	game.scenes[GoalScene] = NewGoal(game)
+
+	game.scenes[WorldScene].Reset()
 
 	return game
 }

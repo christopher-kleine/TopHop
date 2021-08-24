@@ -3,6 +3,8 @@ package main
 import (
 	"bytes"
 	"image"
+	_ "image/png"
+
 	"log"
 
 	"github.com/hajimehoshi/ebiten/v2"
@@ -11,6 +13,7 @@ import (
 type Player struct {
 	tileset *ebiten.Image
 	IsSolid func(X, Y int) bool
+	IsGoal  func(X, Y int) bool
 	State   func() error
 
 	frameCount int
@@ -43,13 +46,15 @@ func (p *Player) Walk() error {
 	if p.frameCount == 0 {
 		p.animFrame = (p.animFrame + 1) % 4
 	}
-	p.OffsetX = p.OffsetX + p.velX
+	if !p.IsSolid(p.PosX+1, p.PosY) {
+		p.OffsetX = p.OffsetX + p.velX
+	}
 	if p.OffsetX >= 8 {
 		tileCount := int(p.OffsetX) / 8
 		p.PosX = p.PosX + tileCount
 		p.OffsetX = p.OffsetX - float64(tileCount)*8
 	}
-	if !p.IsSolid(p.PosX, p.PosY) {
+	if !p.IsSolid(p.PosX, p.PosY+1) {
 		p.State = p.Fall
 		p.frameCount = 0
 		p.animFrame = 4
@@ -87,7 +92,7 @@ func (p *Player) Fall() error {
 		p.PosY = p.PosY + tileCount
 		p.OffsetY = p.OffsetY - float64(tileCount)*8
 	}
-	if p.IsSolid(p.PosX, p.PosY) {
+	if p.IsSolid(p.PosX, p.PosY+1) {
 		p.State = p.Walk
 		p.frameCount = 0
 		p.animFrame = 0
@@ -98,13 +103,15 @@ func (p *Player) Fall() error {
 
 func NewPlayer(IsSolid func(int, int) bool) *Player {
 	var err error
-	playerPng, err := assets.ReadFile("assets/tilesets/player.png")
+	playerPng, err := assets.ReadFile("assets/images/player.png")
 	if err != nil {
+		log.Println("-- 2 --")
 		log.Fatal(err)
 	}
 
 	playerDecoded, _, err := image.Decode(bytes.NewReader(playerPng))
 	if err != nil {
+		log.Println("-- 3 --")
 		log.Fatal(err)
 	}
 
@@ -114,6 +121,8 @@ func NewPlayer(IsSolid func(int, int) bool) *Player {
 		velX:    0.5,
 		velY:    1,
 		IsSolid: IsSolid,
+		PosX:    1,
+		PosY:    2,
 	}
 
 	p.State = p.Walk

@@ -1,28 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="8" tileheight="8" infinite="0" nextlayerid="2" nextobjectid="1">
- <tileset firstgid="1" source="../tilesets/world.tsx"/>
+<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="8" tileheight="8" infinite="0" nextlayerid="3" nextobjectid="1">
+ <tileset firstgid="1" name="world" tilewidth="8" tileheight="8" tilecount="64" columns="8">
+  <image source="../images/world.png" width="64" height="64"/>
+ </tileset>
  <layer id="1" name="Kachelebene 1" width="30" height="20">
-  <data encoding="csv">
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,42,44,42,0,41,42,43,0,41,42,43,0,0,51,0,51,0,41,42,43,0,41,42,43,0,0,0,
-0,0,0,0,51,0,0,51,50,51,0,51,58,59,0,0,51,58,49,0,51,50,51,0,51,58,59,0,0,0,
-0,0,0,0,51,0,0,57,58,59,0,51,0,0,0,0,51,0,51,0,57,58,59,0,51,0,0,0,0,0,
-0,0,9,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,11,0,0,
-0,0,25,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,27,0,0,
-0,0,0,0,12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,12,0,0,0,0,
-0,0,0,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,0,0,0,0,
-0,0,0,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,0,0,0,0,
-0,0,0,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,0,0,0,0,
-0,0,0,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,0,0,0,0,
-0,0,0,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,0,0,0,0,
-0,0,0,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,0,0,0,0,
-0,0,0,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,0,0,0,0,
-0,0,0,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,0,0,0,0,
-0,0,0,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,0,0,0,0,
-0,0,0,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,0,0,0,0,
-10,10,10,10,18,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,18,10,10,10,10
-</data>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgF9AZaQKwDpUFAE8rWxsEHAWM0mhg92IAxGtsIzWwrILZGUwMSMyRBDyF7LdH0GGMqx/AvMXqQAScQc9EYc2OxVxKIpWiMpfH4m4dAuJADiDFThAb2EmPmqL2j9o7aO2ovITPRy24hLGKUYmxmAgB4Yw8X
+  </data>
+ </layer>
+ <layer id="2" name="Kachelebene 2" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20JT6AAAHgaCWAAAQ==
+  </data>
  </layer>
 </map>
