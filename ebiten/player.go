@@ -41,6 +41,12 @@ func (p *Player) Draw(screen *ebiten.Image) {
 	screen.DrawImage(p.tileset.SubImage(tile).(*ebiten.Image), op)
 }
 
+func (p *Player) Reset() {
+	p.State = p.Walk
+	p.frameCount = 0
+	p.animFrame = 0
+}
+
 func (p *Player) Walk() error {
 	p.frameCount = (p.frameCount + 1) % p.Speed
 	if p.frameCount == 0 {
@@ -93,9 +99,7 @@ func (p *Player) Fall() error {
 		p.OffsetY = p.OffsetY - float64(tileCount)*8
 	}
 	if p.IsSolid(p.PosX, p.PosY+1) {
-		p.State = p.Walk
-		p.frameCount = 0
-		p.animFrame = 0
+		p.Reset()
 	}
 
 	return nil

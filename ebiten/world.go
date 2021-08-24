@@ -47,6 +47,7 @@ func (w *World) Update() error {
 		} else {
 			w.player.PosX = w.level.PlayerX
 			w.player.PosY = w.level.PlayerY
+			w.player.Reset()
 		}
 	}
 
