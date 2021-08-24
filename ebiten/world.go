@@ -51,6 +51,12 @@ func (w *World) Update() error {
 		}
 	}
 
+	if w.level.IsDeadly(w.player.PosX, w.player.PosY+1) {
+		w.player.PosX = w.level.PlayerX
+		w.player.PosY = w.level.PlayerY
+		w.player.Reset()
+	}
+
 	return nil
 }
 
