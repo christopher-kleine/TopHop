@@ -2,15 +2,11 @@ package main
 
 import (
 	"bytes"
-	_ "embed"
 	"image"
 	"log"
 
 	"github.com/hajimehoshi/ebiten/v2"
 )
-
-//go:embed assets/tilesets/world.png
-var worldPng []byte
 
 type World struct {
 	player  *Player
@@ -36,6 +32,21 @@ func (w *World) Draw(screen *ebiten.Image) {
 
 func NewWorld(g *Game) *World {
 	var err error
+	worldPng, err := assets.ReadFile("assets/tilesets/world.png")
+	if err != nil {
+		log.Println(assets)
+		d, err2 := assets.ReadDir(".")
+		if err2 != nil {
+			log.Fatal(err2)
+		}
+
+		for _, cd := range d {
+			log.Println(cd.Name())
+		}
+
+		log.Fatal(err)
+	}
+
 	worldDecoded, _, err := image.Decode(bytes.NewReader(worldPng))
 	if err != nil {
 		log.Fatal(err)

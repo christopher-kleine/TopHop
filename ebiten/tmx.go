@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/xml"
-	"io"
 	"strings"
 	"unicode"
 )
@@ -19,9 +18,13 @@ type TMXLayer struct {
 	cells []string
 }
 
-func (tmx *TMX) Decode(in io.Reader) error {
-	reader := xml.NewDecoder(in)
-	if err := reader.Decode(tmx); err != nil {
+func (tmx *TMX) Open(level string) error {
+	data, err := assets.ReadFile("asstes/maps/" + level + ".tmx")
+	if err != nil {
+		return err
+	}
+
+	if err := xml.Unmarshal(data, tmx); err != nil {
 		return err
 	}
 

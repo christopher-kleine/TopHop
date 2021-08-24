@@ -2,16 +2,11 @@ package main
 
 import (
 	"bytes"
-	_ "embed"
 	"image"
-	_ "image/png"
 	"log"
 
 	"github.com/hajimehoshi/ebiten/v2"
 )
-
-//go:embed assets/tilesets/player.png
-var playerPng []byte
 
 type Player struct {
 	tileset *ebiten.Image
@@ -103,6 +98,11 @@ func (p *Player) Fall() error {
 
 func NewPlayer(IsSolid func(int, int) bool) *Player {
 	var err error
+	playerPng, err := assets.ReadFile("assets/tilesets/player.png")
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	playerDecoded, _, err := image.Decode(bytes.NewReader(playerPng))
 	if err != nil {
 		log.Fatal(err)
