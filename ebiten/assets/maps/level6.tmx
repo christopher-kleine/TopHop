@@ -1,32 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="8" tileheight="8" infinite="0" nextlayerid="3" nextobjectid="1">
+<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="8" tileheight="8" infinite="0" nextlayerid="4" nextobjectid="1">
  <tileset firstgid="1" name="world" tilewidth="8" tileheight="8" tilecount="64" columns="8">
   <image source="../images/world.png" width="64" height="64"/>
-  <tile id="12">
-   <animation>
-    <frame tileid="12" duration="200"/>
-    <frame tileid="13" duration="200"/>
-    <frame tileid="20" duration="200"/>
-    <frame tileid="21" duration="200"/>
-   </animation>
-  </tile>
-  <tile id="28">
-   <animation>
-    <frame tileid="28" duration="200"/>
-    <frame tileid="29" duration="200"/>
-    <frame tileid="36" duration="200"/>
-    <frame tileid="37" duration="200"/>
-   </animation>
-  </tile>
+ </tileset>
+ <tileset firstgid="65" name="alpha" tilewidth="8" tileheight="8" tilecount="144" columns="12">
+  <image source="../images/alpha.png" width="96" height="96"/>
  </tileset>
  <layer id="1" name="Kachelebene 1" width="30" height="20">
   <data encoding="base64" compression="zlib">
-   eJztlLsOgCAMRQlOvgaRRY2D//+T1oQmTVOUIjI5nIRUbm9qW5wxZq2MA2bgyMRm6qbftwopvpYwAGOgBTqgJ7GB3S9Vrwf2wKXFucSY/+g/T6HGLngiGEvNpfVdzP1eboo8ku9Tf97SKOvNBWeQUsOX90f7Tlp25v1I7Q3OlZRD2k8NVB/zlXTSfmqgeil3LG9J39g3Pmuxd0HDnd79VOMEdmM6rA==
+   eJwTYmBgkKIzFgJiYSBWpDMWHLV31N5Re0ftHbV31N5BYK/kANnLzACpg7mIxNxAzATFMDNgfE4SzOGC2kssBoUNLw4sSKJZpNoriwOTai8AwIRElQ==
   </data>
  </layer>
- <layer id="2" name="Kachelebene 2" width="30" height="20">
+ <layer id="2" name="Kachelebene 2" width="30" height="20" visible="0">
+  <properties>
+   <property name="logic" type="bool" value="true"/>
+  </properties>
   <data encoding="base64" compression="zlib">
-   eJxjZ2BgYB8gTC4gV++ovfQBxNjLhoaxiRNSS4696OrR9aKLEWsOqfZyQDGyvchitLKXGnkSl1pC8UMpYMVhL7UBenqjVz7CFScsROonJh+R4g5i8ycpAJ9+fOFMab2BT/9A28uBBWMrF0jB+PQPVH0/EjEASIgG6Q==
+   eJxjZ2BgYB8gTG8wau+ovaP2jto7au+ovYPJXhY628sKtZeNDAwD5OilZhthoNompJoDAH1TA68=
+  </data>
+ </layer>
+ <layer id="3" name="Kachelebene 3" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztzz0OgkAQQOG5miaaIGiiCUIivV5AG220AX+gQ9BOez2jr9jNbr2F1bzkq2amGBFN0zQttCtu2OOAF95mtsXO21mhQISJdxNShx4lKnzwNbMjTt7OGhukWHo3IZ1xQY1G3A8xEgwwxAhjcb/au9Ba3PHAU9wPGXJMMcMcC3G/2jtN+3c/BlYdiQ==
   </data>
  </layer>
 </map>

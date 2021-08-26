@@ -21,7 +21,7 @@
  </tileset>
  <layer id="1" name="Kachelebene 1" width="30" height="20">
   <data encoding="base64" compression="zlib">
-   eJwTYmBgkKIzFgJiYSBWpDMWHLV31F4smAkNk6pfkkh7iTWfWHXMDJC8xIWGuXH4jZRwgIlxYjGfC2ovOqZmnAvisGMw2Ysr7HkJYGxhSoqduMJAlgAm1W+D2V5sYU/tMB3Fo5hSDABIRzef
+   eJztk0ELQEAQhSdOFgfLBTn4/3/SyE5Nk1nDRpTDV2pf+/ZTzwPA8DAeaZH5YZq/99W9meArvv1Bb4XUgQIpI1k6p3wVyeawbckpd3bIFFj/zWhwoHynvM0FPOg7Xu+ircc6rfmG9XE071TIc68z5p2K5nnF27Ihi+cd3lZPzZtvo1aQmzvruefNtzEpyM2ldHJvJ74lMvfzDhbshzrN
   </data>
  </layer>
  <layer id="2" name="Kachelebene 2" width="30" height="20" visible="0">
@@ -29,7 +29,7 @@
    <property name="logic" type="bool" value="true"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJxjZ2BgYB8gTG8wau+ovdgAGxom114WIu0h1j2EACvUXnT3I+slxV+E9MMwPfL0QJUlpNqLL+xxAVLDlFphMFDlOK3s5SCAaVl3jeJRTAwGACv2CTU=
+   eJxjZ2BgYB8gTG8wau/gtpcNDdPLXkoBzF4WHPJsaGx8fkOXx6eWFWovLjPZ0dj4wgZdHptamD2E8jFIjAOKiYkPQupxlR/kphNCAJc/aV1+EVtuEuNvUtTQu9wmt74gJW9gy3PUqq8I5SNK/YmOkfMGBw6Mrm4UDw4MAAtSB+E=
   </data>
  </layer>
 </map>

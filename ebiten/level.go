@@ -8,6 +8,7 @@ import (
 
 	"github.com/hajimehoshi/ebiten/v2"
 	"github.com/lafriks/go-tiled"
+	"github.com/lafriks/go-tiled/render"
 )
 
 type Level struct {
@@ -76,24 +77,18 @@ func (l *Level) IsDeadly(X, Y int) bool {
 }
 
 func (l *Level) Draw(screen *ebiten.Image) {
-	var (
-		x int
-		y int
-	)
-	for _, tile := range l.level.Layers[0].Tiles {
-		if tile.Nil == false {
-			spriteRect := tile.Tileset.GetTileRect(tile.ID)
-			tileImage := l.tileset.SubImage(spriteRect).(*ebiten.Image)
-
-			op := &ebiten.DrawImageOptions{}
-			op.GeoM.Translate(float64(x)*8, float64(y)*8)
-			screen.DrawImage(tileImage, op)
-		}
-		x = (x + 1) % 30
-		if x == 0 {
-			y++
-		}
+	renderer, err := render.NewRenderer(l.level)
+	if err != nil {
+		log.Fatal(err)
 	}
+
+	err = renderer.RenderVisibleLayers()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	img := ebiten.NewImageFromImage(renderer.Result)
+	screen.DrawImage(img, nil)
 }
 
 func (l *Level) Load(filename string) error {
@@ -108,21 +103,25 @@ func (l *Level) Load(filename string) error {
 		x int
 		y int
 	)
-	for _, tile := range l.level.Layers[1].Tiles {
-		if tile.Nil == false {
-			switch tile.ID {
-			case 3:
-				l.PlayerX = x
-				l.PlayerY = y
+	for _, layer := range l.level.Layers {
+		if layer.Properties.GetBool("logic") {
+			for _, tile := range layer.Tiles {
+				if !tile.Nil {
+					switch tile.ID {
+					case 3:
+						l.PlayerX = x
+						l.PlayerY = y
 
-			case 4:
-				l.GoalX = x
-				l.GoalY = y
+					case 4:
+						l.GoalX = x
+						l.GoalY = y
+					}
+				}
+				x = (x + 1) % 30
+				if x == 0 {
+					y++
+				}
 			}
-		}
-		x = (x + 1) % 30
-		if x == 0 {
-			y++
 		}
 	}
 

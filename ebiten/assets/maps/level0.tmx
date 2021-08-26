@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="8" tileheight="8" infinite="0" nextlayerid="3" nextobjectid="1">
+<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="8" tileheight="8" infinite="0" nextlayerid="4" nextobjectid="2">
  <tileset firstgid="1" name="world" tilewidth="8" tileheight="8" tilecount="64" columns="8">
   <image source="../images/world.png" width="64" height="64"/>
   <tile id="14">
@@ -17,7 +17,10 @@
    eJwTYmBgkKIzFgJiYSBWpDMWHEB7QX7mwoO5aWgvPkyL8Bi1d9TeUXtH7R21d9ReZCwzQPYyE2EvCOOrn8nFAO8nQC4=
   </data>
  </layer>
- <layer id="2" name="Kachelebene 2" width="30" height="20">
+ <layer id="2" name="Kachelebene 2" width="30" height="20" visible="0">
+  <properties>
+   <property name="logic" type="bool" value="true"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjZ2BgYB8gTG8As5dlgOxlI4BpZS+942HU3lF7R+0dtXfU3lF7B4O9rETaS6h+JhWDzAQAkyUGBw==
   </data>

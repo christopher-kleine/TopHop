@@ -15,7 +15,7 @@ type TMXLayer struct {
 	XMLName xml.Name `xml:"layer"`
 	Data    string   `xml:"data"`
 
-	cells []string
+	Cells []string
 }
 
 func (tmx *TMX) Open(level string) error {
@@ -30,7 +30,7 @@ func (tmx *TMX) Open(level string) error {
 
 	for index := range tmx.Layers {
 		data := removeSpace(tmx.Layers[index].Data)
-		tmx.Layers[index].cells = strings.Split(data, ",")
+		tmx.Layers[index].Cells = strings.Split(data, ",")
 	}
 
 	return nil
